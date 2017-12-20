@@ -4,9 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#85ece5"
-    tools:context="com.guesswho.idan.androidguesswho.openingScreen">
-
-    <include layout = "@layout/top_bar"/>
+    tools:context="com.guesswho.idan.androidguesswho.Activities.SettingsActivity">
 
 </android.support.constraint.ConstraintLayout>

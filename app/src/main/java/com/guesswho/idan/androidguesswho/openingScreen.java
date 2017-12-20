@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.guesswho.idan.androidguesswho.Activities.BaseActivity;
 
-public class MainActivity extends BaseActivity {
+public class openingScreen extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
