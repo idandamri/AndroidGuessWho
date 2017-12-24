@@ -21,6 +21,7 @@ public class BaseActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return Utils.isMuted();
     }
 
     public void openSettingsActivity(){

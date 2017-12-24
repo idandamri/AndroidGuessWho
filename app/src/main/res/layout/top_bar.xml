@@ -17,7 +17,7 @@
             android:paddingLeft="15dp"
             android:paddingStart="15dp"
             android:paddingTop="15dp"
-            android:src="@drawable/ic_volume_off_black_24dp" />
+            android:src="@drawable/ic_volume_up_black_24dp" />
 
         <ImageView
             android:id="@+id/settings_btn"
