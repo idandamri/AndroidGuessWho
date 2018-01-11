@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.guesswho.idan.androidguesswho.Activities.BaseActivity;
-import com.guesswho.idan.androidguesswho.Activities.GameActivity;
+import com.guesswho.idan.androidguesswho.Activities.EasyGameActivity;
 import com.guesswho.idan.androidguesswho.Activities.SettingsActivity;
 import com.guesswho.idan.androidguesswho.Activities.Utils;
 
@@ -25,12 +25,12 @@ public class openingScreen extends BaseActivity {
         Button playBtn = findViewById(R.id.play_btn);
         soundBtn = findViewById(R.id.sound_btn);
         settingsBtn = findViewById(R.id.settings_btn);
-        Button tutorialBtn = findViewById(R.id.play_btn);
+        Button tutorialBtn = findViewById(R.id.tutorial_btn);
 
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent gameActivity = new Intent(getApplicationContext(), GameActivity.class);
+                Intent gameActivity = new Intent(getApplicationContext(), EasyGameActivity.class);
                 startActivity(gameActivity);
             }
         });

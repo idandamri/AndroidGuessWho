@@ -8,10 +8,12 @@
         android:id="@+id/character_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible"
         android:src="@mipmap/dumb_icon" />
 
     <ImageView
         android:id="@+id/cover_x_charachter"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/circle_x" />
