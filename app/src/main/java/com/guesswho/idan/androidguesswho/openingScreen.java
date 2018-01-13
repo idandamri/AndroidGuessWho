@@ -2,6 +2,7 @@ package com.guesswho.idan.androidguesswho;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;

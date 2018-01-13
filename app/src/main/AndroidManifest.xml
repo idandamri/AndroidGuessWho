@@ -22,15 +22,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.BaseActivity"
+        <activity
+            android:name=".Activities.BaseActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Activities.SettingsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Activities.SettingsActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Activities.EasyGameActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Activities.EasyGameActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
+        <activity android:name=".Activities.SelectCardActivity"></activity>
     </application>
 
 </manifest>

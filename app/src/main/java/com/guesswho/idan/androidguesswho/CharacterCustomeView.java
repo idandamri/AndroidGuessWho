@@ -18,10 +18,11 @@ public class CharacterCustomeView extends RelativeLayout {
     private View view;
     public ImageView characterIV, xIV;
     public TextView charNameTV;
+    public OnClickListener clickListener = null;
     String charecterName = "";
     boolean isCharacterMarked = false;
+    boolean isClickable = true;
     int charecterPosition = -1;
-
 
     public CharacterCustomeView(Context context) {
         super(context, null);
@@ -48,14 +49,16 @@ public class CharacterCustomeView extends RelativeLayout {
 
         @Override
         public void onClick(View view) {
-            if (view != null) {
-                if(!isCharacterMarked()){
-                    view.findViewById(R.id.cover_x_charachter).setVisibility(VISIBLE);
-                    setCharacterMarked(true);
-                }
-                else{
-                    view.findViewById(R.id.cover_x_charachter).setVisibility(INVISIBLE);
-                    setCharacterMarked(false);
+            if (isClickable) {
+                if (view != null) {
+                    if(!isCharacterMarked()){
+                        view.findViewById(R.id.cover_x_charachter).setVisibility(VISIBLE);
+                        setCharacterMarked(true);
+                    }
+                    else{
+                        view.findViewById(R.id.cover_x_charachter).setVisibility(INVISIBLE);
+                        setCharacterMarked(false);
+                    }
                 }
             }
         }
@@ -63,20 +66,27 @@ public class CharacterCustomeView extends RelativeLayout {
 
     private void initView() {
         characterIV = view.findViewById(R.id.character_item);
+        charNameTV = view.findViewById(R.id.character_name);
         characterIV.setImageResource(R.mipmap.dumb_icon);
         xIV = view.findViewById(R.id.cover_x_charachter);
         xIV.setImageResource(R.drawable.circle_x);
         xIV.setVisibility(INVISIBLE);
-        view.setOnClickListener(charecterClickListener);
+        if(getIsClickable()){
+            view.setOnClickListener(charecterClickListener);
+        }
+        else{
+            view.setOnClickListener(clickListener);
+        }
     }
 
-    public static CharacterCustomeView newInstance(String name, int position, boolean isCharacterMarked) {
+    public static CharacterCustomeView newInstance(String name, int position, boolean isCharacterMarked, boolean isClickable) {
         CharacterCustomeView retVal = null;
         try {
             retVal = new CharacterCustomeView(Utils.getContext());
             retVal.setCharacterMarked(isCharacterMarked);
             retVal.setCharecterName(name);
             retVal.setCharecterPosition(position);
+            retVal.setIsClickable(isClickable);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -100,6 +110,10 @@ public class CharacterCustomeView extends RelativeLayout {
         this.charecterName = charecterName;
     }
 
+    public void setIVResource(int src) {
+        characterIV.setImageResource(src);
+    }
+
     public void setCharacterMarked(boolean characterMarked) {
         isCharacterMarked = characterMarked;
     }
@@ -108,4 +122,26 @@ public class CharacterCustomeView extends RelativeLayout {
         this.charecterPosition = charecterPosition;
     }
 
+    public void setIsClickable(boolean isClickable) {
+        if(!isClickable){
+            this.isClickable = false;
+            this.setOnClickListener(null);
+        }
+    }
+
+    public boolean getIsClickable() {
+        return isClickable;
+    }
+
+    public OnClickListener getClickListener() {
+        return clickListener;
+    }
+
+    public void setClickListener(OnClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    public View getView() {
+        return view;
+    }
 }

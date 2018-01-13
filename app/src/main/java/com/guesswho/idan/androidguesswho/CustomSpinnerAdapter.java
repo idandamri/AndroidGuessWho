@@ -25,8 +25,6 @@ public class CustomSpinnerAdapter extends BaseAdapter implements SpinnerAdapter 
         activity = context;
     }
 
-
-
     public int getCount()
     {
         return asr.size();
@@ -42,8 +40,6 @@ public class CustomSpinnerAdapter extends BaseAdapter implements SpinnerAdapter 
         return (long)i;
     }
 
-
-
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         TextView txt = new TextView(activity);
@@ -52,17 +48,19 @@ public class CustomSpinnerAdapter extends BaseAdapter implements SpinnerAdapter 
         txt.setGravity(Gravity.CENTER_VERTICAL);
         txt.setText(asr.get(position));
         txt.setTextColor(Color.parseColor("#000000"));
+        txt.setBackgroundResource(R.drawable.dialog_background_gradient);
+        txt.setGravity(Gravity.CENTER);
+        txt.setPadding(7,20,7,20);
         return  txt;
     }
 
     public View getView(int i, View view, ViewGroup viewgroup) {
 
-
         TextView txt = new TextView(activity);
         txt.setGravity(Gravity.CENTER);
         txt.setPadding(16, 16, 16, 16);
         txt.setTextSize(16);
-        txt.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_drop_down_spinner_arrow, 0);
+        txt.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_drop_up_spinner_arrow, 0);
         txt.setText(asr.get(i));
         txt.setTextColor(Color.parseColor("#000000"));
         return  txt;
