@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="500dp"
+    android:layout_height="280dp"
+    android:layout_gravity="center"
+    android:background="#85ece5"
+    tools:context="com.guesswho.idan.androidguesswho.Activities.CharecterSelectorScreen">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/char_selector_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@+id/char_selector_recycler_view"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/select_card_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#8b4cac"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="SELECT"
+        android:textColor="#000000"/>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.guesswho.idan.androidguesswho.Activities.BaseActivity;
+import com.guesswho.idan.androidguesswho.Activities.CharecterSelectorScreen;
 import com.guesswho.idan.androidguesswho.Activities.EasyGameActivity;
 import com.guesswho.idan.androidguesswho.Activities.SettingsActivity;
 import com.guesswho.idan.androidguesswho.Activities.Utils;
@@ -31,7 +32,7 @@ public class openingScreen extends BaseActivity {
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent gameActivity = new Intent(getApplicationContext(), EasyGameActivity.class);
+                Intent gameActivity = new Intent(getApplicationContext(), CharecterSelectorScreen.class);
                 startActivity(gameActivity);
             }
         });

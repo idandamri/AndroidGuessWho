@@ -34,7 +34,8 @@
             android:name=".Activities.EasyGameActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape" />
-        <activity android:name=".Activities.SelectCardActivity"></activity>
+        <activity android:name=".Activities.CharecterSelectorScreen"
+            android:theme="@style/Theme.AppCompat.Translucent" />
     </application>
 
 </manifest>
