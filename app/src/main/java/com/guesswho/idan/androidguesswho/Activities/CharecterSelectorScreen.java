@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.guesswho.idan.androidguesswho.CharSelectorAdapter;
+import com.guesswho.idan.androidguesswho.CharacterSelectObject;
 import com.guesswho.idan.androidguesswho.R;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class CharecterSelectorScreen extends AppCompatActivity {
     private RecyclerView charListRV;
     private RecyclerView.Adapter charRVAdapter;
     private RecyclerView.LayoutManager charRVLayoutManager;
-    private ArrayList<String> DataSet;
+    private ArrayList<CharacterSelectObject> DataSet;
     private TextView playBtn;
 
     @Override
@@ -33,7 +34,7 @@ public class CharecterSelectorScreen extends AppCompatActivity {
 
         DataSet = new ArrayList<>();
         for (int i = 0 ; i < 22 ; i++){
-            DataSet.add("Name "+i);
+            DataSet.add(new CharacterSelectObject(i, null, "Name "+i));
         }
         charListRV = findViewById(R.id.char_selector_recycler_view);
         playBtn = findViewById(R.id.select_card_tv);
@@ -42,6 +43,7 @@ public class CharecterSelectorScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent gameActivity = new Intent(getApplicationContext(), EasyGameActivity.class);
                 startActivity(gameActivity);
+                finish();
             }
         });
         charListRV.setHasFixedSize(true);

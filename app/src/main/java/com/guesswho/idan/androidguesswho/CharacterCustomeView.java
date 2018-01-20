@@ -65,7 +65,7 @@ public class CharacterCustomeView extends RelativeLayout {
     };
 
     private void initView() {
-        characterIV = view.findViewById(R.id.character_item);
+        characterIV = view.findViewById(R.id.character_item_iv);
         charNameTV = view.findViewById(R.id.character_name);
         characterIV.setImageResource(R.mipmap.dumb_icon);
         xIV = view.findViewById(R.id.cover_x_charachter);
@@ -108,6 +108,7 @@ public class CharacterCustomeView extends RelativeLayout {
 
     public void setCharecterName(String charecterName) {
         this.charecterName = charecterName;
+        this.charNameTV.setText(charecterName);
     }
 
     public void setIVResource(int src) {
