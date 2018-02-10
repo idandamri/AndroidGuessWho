@@ -1,0 +1,31 @@
+
+<resources>
+    <string name="app_name">AndroidGuessWho</string>
+
+    <string name="zebra">זברה</string>
+    <string name="bear">דב</string>
+    <string name="lion">אריה</string>
+    <string name="bunny">ארנב</string>
+    <string name="cheetah">צ\'יטה (ברדלס)</string>
+    <string name="chick">אפרוח</string>
+    <string name="cow">פרה</string>
+    <string name="deer">אייל</string>
+    <string name="duckling">ברווז</string>
+    <string name="elephant">פיל</string>
+    <string name="fish">דג</string>
+    <string name="flamingo">פלמינגו</string>
+    <string name="fox">שועל</string>
+    <string name="giraffe">ג\'ירפה</string>
+    <string name="horse">סוס</string>
+    <string name="mouse">עכבר</string>
+    <string name="owl">ינשוף</string>
+    <string name="panda">דב פנדה</string>
+    <string name="panther">פנתר</string>
+    <string name="pig">חזיר</string>
+    <string name="rhino">קרנף</string>
+    <string name="turtle">צב</string>
+    <string name="snake">נחש</string>
+    <string name="tiger">נמר</string>
+    <string name="sheep">כבשה</string>
+    <string name="shark">כריש</string>
+</resources>

@@ -23,6 +23,7 @@ public class CharacterCustomeView extends RelativeLayout {
     boolean isCharacterMarked = false;
     boolean isClickable = true;
     int charecterPosition = -1;
+    CharacterSelectObject characterSelectObject;
 
     public CharacterCustomeView(Context context) {
         super(context, null);

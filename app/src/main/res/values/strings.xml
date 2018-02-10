@@ -1,6 +1,30 @@
 <resources>
     <string name="app_name">AndroidGuessWho</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="zebra">Zebra</string>
+    <string name="bear">Bear</string>
+    <string name="lion">Lion</string>
+    <string name="bunny">Bunny</string>
+    <string name="cheetah">Cheetah</string>
+    <string name="chick">Chick</string>
+    <string name="cow">Cow</string>
+    <string name="deer">Deer</string>
+    <string name="duckling">Duck</string>
+    <string name="elephant">Elephant</string>
+    <string name="fish">Fish</string>
+    <string name="flamingo">Flamingo</string>
+    <string name="fox">Fox</string>
+    <string name="giraffe">Giraffe</string>
+    <string name="horse">Horse</string>
+    <string name="mouse">Mouse</string>
+    <string name="owl">Owl</string>
+    <string name="panda">Panda</string>
+    <string name="panther">Panther</string>
+    <string name="pig">Pig</string>
+    <string name="rhino">Rhinoceros</string>
+    <string name="turtle">Turtle</string>
+    <string name="snake">Snake</string>
+    <string name="tiger">Tiger</string>
+    <string name="sheep">Sheep</string>
+    <string name="shark">Shark</string>
 </resources>

@@ -10,11 +10,14 @@ public class CharacterSelectObject {
 
     public static final int EMPTY = -1;
     private int resourceId = EMPTY;
+    private int imageName = EMPTY;
     private HashMap<Integer, CharacteristicObj> Characteristics = new HashMap<>();
     private String name = "";
 
-    public CharacterSelectObject(int resourceId, HashMap<Integer, CharacteristicObj> characteristics, String name) {
+    public CharacterSelectObject(int resourceId, HashMap<Integer, CharacteristicObj> characteristics,
+                                 String name, int imageSrcName) {
         setResourceId(resourceId);
+        setImageName(imageSrcName);
         setCharacteristics(characteristics);
         setName(name);
     }
@@ -23,8 +26,16 @@ public class CharacterSelectObject {
         return resourceId;
     }
 
+    public int getImageName() {
+        return imageName;
+    }
+
     public void setResourceId(int resourceId) {
         this.resourceId = resourceId;
+    }
+
+    public void setImageName(int imageName) {
+        this.imageName = imageName;
     }
 
     public HashMap<Integer, CharacteristicObj> getCharacteristics() {

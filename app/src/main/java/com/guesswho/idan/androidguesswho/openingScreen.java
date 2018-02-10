@@ -2,14 +2,12 @@ package com.guesswho.idan.androidguesswho;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.guesswho.idan.androidguesswho.Activities.BaseActivity;
 import com.guesswho.idan.androidguesswho.Activities.CharecterSelectorScreen;
-import com.guesswho.idan.androidguesswho.Activities.EasyGameActivity;
 import com.guesswho.idan.androidguesswho.Activities.SettingsActivity;
 import com.guesswho.idan.androidguesswho.Activities.Utils;
 
@@ -23,6 +21,7 @@ public class openingScreen extends BaseActivity {
         Utils.setContext(getApplicationContext());
         Utils.setIsMuted(false);
         Utils.initMP();
+        Utils.initDataSet();
         setContentView(R.layout.activity_main);
         Button playBtn = findViewById(R.id.play_btn);
         soundBtn = findViewById(R.id.sound_btn);
@@ -49,14 +48,6 @@ public class openingScreen extends BaseActivity {
 
         settingsBtn.setOnClickListener(settingaListener);
     }
-
-//    private void initSoundBtn(ImageView soundBtn) {
-//        if(Utils.isMuted()){
-//                soundBtn.setImageResource(R.drawable.ic_volume_off_black_24dp);
-//        }else{
-//                soundBtn.setImageResource(R.drawable.ic_volume_up_black_24dp);
-//        }
-//    }
 
     View.OnClickListener soundListener = new View.OnClickListener() {
         @Override
@@ -114,7 +105,6 @@ public class openingScreen extends BaseActivity {
             Utils.unPauseMusic();
         }
     }
-
 
     @Override
     protected void onStop() {

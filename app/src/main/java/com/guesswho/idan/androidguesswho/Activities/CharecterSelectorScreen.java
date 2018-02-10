@@ -33,9 +33,10 @@ public class CharecterSelectorScreen extends AppCompatActivity {
     private void initRv() {
 
         DataSet = new ArrayList<>();
-        for (int i = 0 ; i < 22 ; i++){
-            DataSet.add(new CharacterSelectObject(i, null, "Name "+i));
+        if(Utils.getDataSet() == null || Utils.getDataSet().size() == 0){
+            Utils.initDataSet();
         }
+        DataSet = Utils.getDataSet();
         charListRV = findViewById(R.id.char_selector_recycler_view);
         playBtn = findViewById(R.id.select_card_tv);
         playBtn.setOnClickListener(new View.OnClickListener() {

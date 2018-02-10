@@ -42,6 +42,7 @@ public class CharSelectorAdapter extends RecyclerView.Adapter<CharSelectorAdapte
             holder.itemView.setSelected(true);
         }
         holder.charNameTV.setText(DataSet.get(position).getName());
+        holder.charIV.setImageResource(DataSet.get(position).getImageName());
 //        holder.charIV.setImageResource(DataSet.get(position).getResourceId());
     }
 
