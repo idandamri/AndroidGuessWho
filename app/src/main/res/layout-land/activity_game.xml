@@ -222,8 +222,9 @@
             android:id="@+id/my_selected_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:padding="5dp"
+            android:paddingBottom="10dp"
             android:src="@mipmap/dumb_icon_round" />
 
         <Spinner
@@ -237,7 +238,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="10"
+            android:layout_weight="9.5"
             android:popupBackground="@android:color/transparent"
             android:overlapAnchor="false"
             android:background="@drawable/custom_spinner_background"

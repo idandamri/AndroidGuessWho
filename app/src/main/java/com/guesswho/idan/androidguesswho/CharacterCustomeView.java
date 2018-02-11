@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class CharacterCustomeView extends RelativeLayout {
     boolean isClickable = true;
     int charecterPosition = -1;
     CharacterSelectObject characterSelectObject;
+    public LinearLayout characterNoXContainer;
 
     public CharacterCustomeView(Context context) {
         super(context, null);
@@ -66,6 +68,7 @@ public class CharacterCustomeView extends RelativeLayout {
     };
 
     private void initView() {
+        characterNoXContainer = view.findViewById(R.id.character_container);
         characterIV = view.findViewById(R.id.character_item_iv);
         charNameTV = view.findViewById(R.id.character_name);
         characterIV.setImageResource(R.mipmap.dumb_icon);

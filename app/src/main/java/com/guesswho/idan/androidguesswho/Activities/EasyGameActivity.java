@@ -63,6 +63,8 @@ public class EasyGameActivity extends BaseActivity {
         CharacterCustomeView myCard = findViewById(R.id.my_selected_card);
         myCard.characterIV.setImageResource(selected.getImageName());
         myCard.charNameTV.setText(selected.getName());
+        myCard.characterNoXContainer.setPadding(10,5,10,5);
+        myCard.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_basic);
 
         myCard.setIsClickable(false);
         myCard.getView().setOnClickListener(mySelectionCardListener);
@@ -84,6 +86,7 @@ public class EasyGameActivity extends BaseActivity {
                 card = findViewById(idInteger);
                 card.charNameTV.setText(creationList.get(i-1).getName());
                 card.characterIV.setImageResource(creationList.get(i-1).getImageName());
+                card.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_basic);
             }
         } catch (Exception e) {
             e.printStackTrace();

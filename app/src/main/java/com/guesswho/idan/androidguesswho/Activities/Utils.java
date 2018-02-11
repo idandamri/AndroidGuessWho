@@ -127,9 +127,9 @@ public class Utils {
         id++;
         charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.panda),R.drawable.panda);
         DataSet.add(charObj);
-        id++;
-        charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.panther),R.drawable.panther);
-        DataSet.add(charObj);
+//        id++;
+//        charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.panther),R.drawable.panther);
+//        DataSet.add(charObj);
         id++;
         charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.pig),R.drawable.pig);
         DataSet.add(charObj);
@@ -151,9 +151,9 @@ public class Utils {
         id++;
         charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.turtle),R.drawable.turtle);
         DataSet.add(charObj);
-//        id++;
-//        charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.zebra),R.drawable.zebra);
-//        DataSet.add(charObj);
+        id++;
+        charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.zebra),R.drawable.zebra);
+        DataSet.add(charObj);
     }
 
     public static ArrayList<CharacterSelectObject> getDataSet() {
