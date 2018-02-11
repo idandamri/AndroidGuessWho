@@ -44,14 +44,21 @@ public class openingScreen extends BaseActivity {
             }
         });
 
-        soundBtn.setOnClickListener(soundListener);
+        soundBtn.setOnClickListener(new SoundListener(this.soundBtn));
 
         settingsBtn.setOnClickListener(settingaListener);
     }
 
-    View.OnClickListener soundListener = new View.OnClickListener() {
+    public static class SoundListener implements View.OnClickListener{
+
+        private ImageView soundBtn;
+
+        public SoundListener(ImageView soundBtn) {
+            this.soundBtn = soundBtn;
+        }
+
         @Override
-        public void onClick(View view) {
+        public void onClick(View v) {
             Utils.muteUnmuteSound();
             if (Utils.isMuted()) {
                 soundBtn.setImageResource(R.drawable.ic_volume_up_black_24dp);
@@ -59,9 +66,9 @@ public class openingScreen extends BaseActivity {
                 soundBtn.setImageResource(R.drawable.ic_volume_off_black_24dp);
             }
         }
-    };
+    }
 
-    View.OnClickListener settingaListener = new View.OnClickListener() {
+    public View.OnClickListener settingaListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent settingsActivity = new Intent(getApplicationContext(), SettingsActivity.class);

@@ -14,7 +14,7 @@ import com.guesswho.idan.androidguesswho.R;
 
 import java.util.ArrayList;
 
-public class CharecterSelectorScreen extends AppCompatActivity {
+public class CharecterSelectorScreen extends BaseActivity {
 
     private RecyclerView charListRV;
     private RecyclerView.Adapter charRVAdapter;

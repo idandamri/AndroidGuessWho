@@ -42,6 +42,7 @@
             android:weightSum="6">
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_1"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -49,6 +50,7 @@
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_2"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -56,6 +58,7 @@
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_3"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -63,6 +66,7 @@
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_4"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -70,6 +74,7 @@
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_5"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -77,6 +82,7 @@
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_6"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -95,6 +101,39 @@
 
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_7"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/dumb_icon" />
+
+            <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:layout_width="0dp"
+                android:id="@+id/card_8"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/dumb_icon" />
+
+            <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:layout_width="0dp"
+                android:id="@+id/card_9"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/dumb_icon" />
+
+            <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:layout_width="0dp"
+                android:id="@+id/card_10"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/dumb_icon" />
+
+            <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_11"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -104,34 +143,7 @@
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:src="@mipmap/dumb_icon" />
-
-            <com.guesswho.idan.androidguesswho.CharacterCustomeView
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:src="@mipmap/dumb_icon" />
-
-            <com.guesswho.idan.androidguesswho.CharacterCustomeView
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:src="@mipmap/dumb_icon" />
-
-            <com.guesswho.idan.androidguesswho.CharacterCustomeView
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:src="@mipmap/dumb_icon" />
-
-            <com.guesswho.idan.androidguesswho.CharacterCustomeView
-                android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:id="@+id/card_12"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:src="@mipmap/dumb_icon" />
@@ -149,12 +161,14 @@
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
                 android:layout_width="0dp"
+                android:id="@+id/card_13"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_14"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -164,6 +178,7 @@
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
                 android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:id="@+id/card_15"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:src="@mipmap/dumb_icon" />
@@ -171,11 +186,13 @@
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
                 android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:id="@+id/card_16"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_17"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
@@ -183,6 +200,7 @@
                 android:src="@mipmap/dumb_icon" />
 
             <com.guesswho.idan.androidguesswho.CharacterCustomeView
+                android:id="@+id/card_18"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_margin="5dp"
