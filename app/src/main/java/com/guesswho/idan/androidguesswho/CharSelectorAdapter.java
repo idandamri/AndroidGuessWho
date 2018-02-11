@@ -10,8 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.guesswho.idan.androidguesswho.Activities.CharecterSelectorScreen;
 import com.guesswho.idan.androidguesswho.Activities.Utils;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 /**
@@ -22,12 +24,13 @@ public class CharSelectorAdapter extends RecyclerView.Adapter<CharSelectorAdapte
 
     private int selectedPos = RecyclerView.NO_POSITION;
     private ArrayList<CharacterSelectObject> DataSet;
+    WeakReference selectorScreen;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(Utils.getContext()).inflate(R.layout.card_item, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(v);
+        ViewHolder viewHolder = new ViewHolder(v, (CharecterSelectorScreen) selectorScreen.get());
 
         return viewHolder;
     }
@@ -52,8 +55,9 @@ public class CharSelectorAdapter extends RecyclerView.Adapter<CharSelectorAdapte
     }
 
 
-    public CharSelectorAdapter(ArrayList<CharacterSelectObject> dataSet) {
+    public CharSelectorAdapter(ArrayList<CharacterSelectObject> dataSet, CharecterSelectorScreen charecterSelectorScreen) {
         DataSet = dataSet;
+        selectorScreen = new WeakReference(charecterSelectorScreen);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -61,13 +65,15 @@ public class CharSelectorAdapter extends RecyclerView.Adapter<CharSelectorAdapte
         public ImageView charIV;
         public TextView charNameTV;
         public LinearLayout container;
+        WeakReference<CharecterSelectorScreen> weakReferenceSelectorScreen;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, CharecterSelectorScreen charecterSelectorScreen) {
             super(itemView);
             charIV = itemView.findViewById(R.id.character_item_iv);
             charNameTV = itemView.findViewById(R.id.character_name);
             container = itemView.findViewById(R.id.character_container);
             container.setOnClickListener(this);
+            weakReferenceSelectorScreen = new WeakReference<>(charecterSelectorScreen);
         }
 
         @Override
@@ -76,6 +82,7 @@ public class CharSelectorAdapter extends RecyclerView.Adapter<CharSelectorAdapte
             notifyItemChanged(selectedPos);
             selectedPos = getAdapterPosition();
             notifyItemChanged(selectedPos);
+            weakReferenceSelectorScreen.get().setSelectedCard(DataSet.get(getAdapterPosition()));
         }
     }
 }

@@ -27,4 +27,7 @@
     <string name="tiger">נמר</string>
     <string name="sheep">כבשה</string>
     <string name="shark">כריש</string>
+
+    <string name="select">בחר</string>
+    <string name="my_choice">הקלף שבחרתי:</string>
 </resources>

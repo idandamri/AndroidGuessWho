@@ -8,9 +8,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.guesswho.idan.androidguesswho.CharacterCustomeView;
+import com.guesswho.idan.androidguesswho.CharacterSelectObject;
 import com.guesswho.idan.androidguesswho.CustomSpinnerAdapter;
 import com.guesswho.idan.androidguesswho.R;
 
@@ -19,11 +21,14 @@ import java.util.ArrayList;
 public class EasyGameActivity extends BaseActivity {
 
     ArrayList<String> questions = new ArrayList<String>();
+    CharacterSelectObject selected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Remove title bar
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        selected = (CharacterSelectObject) getIntent().getSerializableExtra("selectedCard");
 
         //set content view AFTER ABOVE sequence (to avoid crash)
         super.onCreate(savedInstanceState);
@@ -43,6 +48,8 @@ public class EasyGameActivity extends BaseActivity {
         spinner.setOnItemSelectedListener(spinnerListener);
 
         CharacterCustomeView myCard = findViewById(R.id.my_selected_card);
+        myCard.characterIV.setImageResource(selected.getImageName());
+        myCard.charNameTV.setText(selected.getName());
 
         myCard.setIsClickable(false);
         myCard.getView().setOnClickListener(mySelectionCardListener);
@@ -86,9 +93,14 @@ public class EasyGameActivity extends BaseActivity {
                 LayoutInflater inflater = getLayoutInflater();
                 View newView = (View) inflater.inflate(R.layout.profile_img_popup, null);
                 CharacterCustomeView characterCustomeView =  newView.findViewById(R.id.my_selected_dialog_card);
-                characterCustomeView.setIVResource(R.mipmap.ic_launcher_foreground);
+                TextView characterCustomeViewTitle =  newView.findViewById(R.id.my_choice_card);
+                characterCustomeViewTitle.setText(R.string.my_choice);
+                characterCustomeView.setIVResource(selected.getImageName());
+                characterCustomeView.setIsClickable(false);
+                characterCustomeView.setCharecterName(selected.getName());
                 settingsDialog.setContentView(newView);
 
+                characterCustomeView.setSoundEffectsEnabled(false);
                 settingsDialog.show();
         }
     };

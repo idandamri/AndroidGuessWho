@@ -27,4 +27,6 @@
     <string name="tiger">Tiger</string>
     <string name="sheep">Sheep</string>
     <string name="shark">Shark</string>
+    <string name="select">Select</string>
+    <string name="my_choice">The card I selected is:</string>
 </resources>

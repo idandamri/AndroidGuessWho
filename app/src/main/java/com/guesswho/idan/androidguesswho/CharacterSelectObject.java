@@ -1,12 +1,13 @@
 package com.guesswho.idan.androidguesswho;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  * Created by Idan on 20/01/2018.
  */
 
-public class CharacterSelectObject {
+public class CharacterSelectObject implements Serializable {
 
     public static final int EMPTY = -1;
     private int resourceId = EMPTY;

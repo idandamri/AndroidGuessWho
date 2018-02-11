@@ -20,6 +20,7 @@ public class CharecterSelectorScreen extends AppCompatActivity {
     private RecyclerView.Adapter charRVAdapter;
     private RecyclerView.LayoutManager charRVLayoutManager;
     private ArrayList<CharacterSelectObject> DataSet;
+    CharacterSelectObject selectedCard;
     private TextView playBtn;
 
     @Override
@@ -39,10 +40,12 @@ public class CharecterSelectorScreen extends AppCompatActivity {
         DataSet = Utils.getDataSet();
         charListRV = findViewById(R.id.char_selector_recycler_view);
         playBtn = findViewById(R.id.select_card_tv);
+        playBtn.setText(R.string.select);
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent gameActivity = new Intent(getApplicationContext(), EasyGameActivity.class);
+                gameActivity.putExtra("selectedCard",selectedCard);
                 startActivity(gameActivity);
                 finish();
             }
@@ -50,8 +53,32 @@ public class CharecterSelectorScreen extends AppCompatActivity {
         charListRV.setHasFixedSize(true);
         charRVLayoutManager = new LinearLayoutManager(Utils.getContext(),LinearLayoutManager.HORIZONTAL,false);
         charListRV.setLayoutManager(charRVLayoutManager);
-        charRVAdapter = new CharSelectorAdapter(DataSet);
+        charRVAdapter = new CharSelectorAdapter(DataSet, this);
         charListRV.setAdapter(charRVAdapter);
-
     }
+
+
+    public static class selectClickListener implements View.OnClickListener{
+
+        CharacterSelectObject selected = null;
+
+        public selectClickListener(CharacterSelectObject selected) {
+            this.selected = selected;
+        }
+
+        @Override
+        public void onClick(View v) {
+
+        }
+    }
+
+    public CharacterSelectObject getSelectedCard() {
+        return selectedCard;
+    }
+
+    public void setSelectedCard(CharacterSelectObject selectedCard) {
+        this.selectedCard = selectedCard;
+    }
+
+
 }
