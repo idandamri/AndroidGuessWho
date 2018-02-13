@@ -48,9 +48,9 @@ public class CustomSpinnerAdapter extends BaseAdapter implements SpinnerAdapter 
         txt.setGravity(Gravity.CENTER_VERTICAL);
         txt.setText(asr.get(position));
         txt.setTextColor(Color.parseColor("#000000"));
-        txt.setBackgroundResource(R.drawable.dialog_background_gradient);
+        txt.setBackgroundColor(Color.WHITE);
         txt.setGravity(Gravity.CENTER);
-        txt.setPadding(7,20,7,20);
+//        txt.setPadding(7,20,7,20);
         return  txt;
     }
 
@@ -60,6 +60,7 @@ public class CustomSpinnerAdapter extends BaseAdapter implements SpinnerAdapter 
         txt.setGravity(Gravity.CENTER);
         txt.setPadding(16, 16, 16, 16);
         txt.setTextSize(16);
+//        txt.setBackgroundResource(R.drawable.custom_spinner_background);
         txt.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_drop_up_spinner_arrow, 0);
         txt.setText(asr.get(i));
         txt.setTextColor(Color.parseColor("#000000"));

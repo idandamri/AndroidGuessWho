@@ -60,17 +60,19 @@ public class EasyGameActivity extends BaseActivity {
         spinner.setAdapter(customSpinnerAdapter);
         spinner.setOnItemSelectedListener(spinnerListener);
 
+        initSelectedCard();
+        initCards();
+    }
+
+    private void initSelectedCard() {
         CharacterCustomeView myCard = findViewById(R.id.my_selected_card);
         myCard.characterIV.setImageResource(selected.getImageName());
         myCard.charNameTV.setText(selected.getName());
         myCard.characterNoXContainer.setPadding(10,5,10,5);
-        myCard.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_basic);
+        myCard.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_selected);
 
         myCard.setIsClickable(false);
         myCard.getView().setOnClickListener(mySelectionCardListener);
-
-        initCards();
-//        myCard.setOnClickListener(mySelectionCardListener);
     }
 
     private void initCards() {
