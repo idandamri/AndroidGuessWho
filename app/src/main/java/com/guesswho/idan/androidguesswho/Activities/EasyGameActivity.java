@@ -1,7 +1,9 @@
 package com.guesswho.idan.androidguesswho.Activities;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -16,12 +18,10 @@ import com.guesswho.idan.androidguesswho.CharacterCustomeView;
 import com.guesswho.idan.androidguesswho.CharacterSelectObject;
 import com.guesswho.idan.androidguesswho.CustomSpinnerAdapter;
 import com.guesswho.idan.androidguesswho.R;
-import com.guesswho.idan.androidguesswho.openingScreen;
 import com.guesswho.idan.androidguesswho.openingScreen.SoundListener;
 
-import java.lang.reflect.Field;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class EasyGameActivity extends BaseActivity {
@@ -66,13 +66,16 @@ public class EasyGameActivity extends BaseActivity {
 
     private void initSelectedCard() {
         CharacterCustomeView myCard = findViewById(R.id.my_selected_card);
+        myCard.setCharacterSelectObject(selected);
         myCard.characterIV.setImageResource(selected.getImageName());
         myCard.charNameTV.setText(selected.getName());
+        myCard.setWeakReference(this);
         myCard.characterNoXContainer.setPadding(10,5,10,5);
         myCard.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_selected);
 
         myCard.setIsClickable(false);
-        myCard.getView().setOnClickListener(mySelectionCardListener);
+        myCard.setIsSelected(true);
+        myCard.getView().setOnClickListener(myCard.selectedClickListener);
     }
 
     private void initCards() {
@@ -82,13 +85,21 @@ public class EasyGameActivity extends BaseActivity {
             Collections.shuffle(creationList);
 
             String id;
+            String name;
+            int imageName = -1;
             for (int i = 1; i <= 18; i++) {
                 id = "card_" + i;
                 int idInteger = getResources().getIdentifier(id, "id", getPackageName());
                 card = findViewById(idInteger);
-                card.charNameTV.setText(creationList.get(i-1).getName());
-                card.characterIV.setImageResource(creationList.get(i-1).getImageName());
+                name = creationList.get(i - 1).getName();
+                imageName = creationList.get(i-1).getImageName();
+                card.setImageResource(imageName);
+                card.setWeakReference(this);
+                card.setCharacterSelectObject(creationList.get(i-1));
+                card.charNameTV.setText(name);
+                card.characterIV.setImageResource(imageName);
                 card.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_basic);
+//                card.setOnLongClickListener(new longClickListener(name, imageName, this));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -122,28 +133,28 @@ public class EasyGameActivity extends BaseActivity {
         }
     };
 
-    public View.OnClickListener mySelectionCardListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Dialog settingsDialog = new Dialog(EasyGameActivity.this);
 
-            settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-
-            LayoutInflater inflater = getLayoutInflater();
-            View newView = (View) inflater.inflate(R.layout.profile_img_popup, null);
-            CharacterCustomeView characterCustomeView = newView.findViewById(R.id.my_selected_dialog_card);
-            TextView characterCustomeViewTitle = newView.findViewById(R.id.my_choice_card);
-            characterCustomeViewTitle.setText(R.string.my_choice);
-            characterCustomeView.setIVResource(selected.getImageName());
-            characterCustomeView.setIsClickable(false);
-            characterCustomeView.setCharecterName(selected.getName());
-            settingsDialog.setContentView(newView);
-
-            characterCustomeView.setSoundEffectsEnabled(false);
-            settingsDialog.show();
-        }
-    };
-
+//    public static class longClickListener implements View.OnLongClickListener{
+//
+//        String name = "";
+//        int resourceImageID = -1;
+//        WeakReference<BaseActivity> activityCompatWeakReference;
+//
+//        public longClickListener(String name, int resourceImageID, BaseActivity activityCompat) {
+//            this.name = name;
+//            this.resourceImageID = resourceImageID;
+//            activityCompatWeakReference = new WeakReference<>(activityCompat);
+//        }
+//
+//        @Override
+//        public boolean onLongClick(View v) {
+//            EasyGameActivity a = ((EasyGameActivity) activityCompatWeakReference.get());
+//            a.openPressenCardDialog(Utils.getContext(),a.selected);
+//
+//            Toast.makeText(Utils.getContext(), "LLLLOOOOONNNGGGG", Toast.LENGTH_SHORT).show();
+//            return true;
+//        }
+//    }
 
     @Override
     protected void onResume() {
