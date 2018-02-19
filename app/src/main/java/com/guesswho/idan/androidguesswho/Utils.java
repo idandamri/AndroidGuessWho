@@ -1,11 +1,12 @@
-package com.guesswho.idan.androidguesswho.Activities;
+package com.guesswho.idan.androidguesswho;
 
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.MediaPlayer;
-
-import com.guesswho.idan.androidguesswho.CharacterSelectObject;
-import com.guesswho.idan.androidguesswho.CharacteristicObj;
-import com.guesswho.idan.androidguesswho.R;
+import android.view.Display;
+import android.view.Surface;
+import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,6 +16,34 @@ import java.util.HashMap;
  */
 
 public class Utils {
+
+    public static boolean isLandscapeMode(){
+        boolean retVal = false;
+        if(getRotation().equals("reverse landscape") || getRotation().equals("landscape")){
+            retVal = true;
+        }
+        return retVal;
+    }
+
+    public static String getRotation(){
+        String retVal = "";
+        try {
+            final int rotation = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getOrientation();
+            switch (rotation) {
+                case Surface.ROTATION_0:
+                    retVal = "portrait";
+                case Surface.ROTATION_90:
+                    retVal = "landscape";
+                case Surface.ROTATION_180:
+                    retVal = "reverse portrait";
+                default:
+                    retVal = "reverse landscape";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return retVal;
+    }
 
     private static ArrayList<CharacterSelectObject> DataSet;
 
@@ -40,6 +69,16 @@ public class Utils {
         mediaPlayer = MediaPlayer.create(getContext(),R.raw.bg_2);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
+    }
+
+    public static int dpToPx(int dp)
+    {
+        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
+    }
+
+    public static int pxToDp(int px)
+    {
+        return (int) (px / Resources.getSystem().getDisplayMetrics().density);
     }
 
     public static boolean muteUnmuteSound() {

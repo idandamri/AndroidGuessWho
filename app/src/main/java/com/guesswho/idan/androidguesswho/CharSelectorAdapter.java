@@ -1,6 +1,5 @@
 package com.guesswho.idan.androidguesswho;
 
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.guesswho.idan.androidguesswho.Activities.CharecterSelectorScreen;
-import com.guesswho.idan.androidguesswho.Activities.Utils;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

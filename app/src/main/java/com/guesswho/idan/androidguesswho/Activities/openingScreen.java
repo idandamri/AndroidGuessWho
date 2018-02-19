@@ -1,17 +1,20 @@
-package com.guesswho.idan.androidguesswho;
+package com.guesswho.idan.androidguesswho.Activities;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-import com.guesswho.idan.androidguesswho.Activities.BaseActivity;
-import com.guesswho.idan.androidguesswho.Activities.CharecterSelectorScreen;
-import com.guesswho.idan.androidguesswho.Activities.SettingsActivity;
-import com.guesswho.idan.androidguesswho.Activities.Utils;
+import com.guesswho.idan.androidguesswho.Utils;
+import com.guesswho.idan.androidguesswho.R;
 
-public class openingScreen extends BaseActivity {
+public class openingScreen extends AppCompatActivity {
 
     ImageView soundBtn, settingsBtn;
 
@@ -19,6 +22,7 @@ public class openingScreen extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Utils.setContext(getApplicationContext());
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Utils.setIsMuted(false);
         Utils.initMP();
         Utils.initDataSet();
@@ -61,9 +65,9 @@ public class openingScreen extends BaseActivity {
         public void onClick(View v) {
             Utils.muteUnmuteSound();
             if (Utils.isMuted()) {
-                soundBtn.setImageResource(R.drawable.ic_volume_up_black_24dp);
+                soundBtn.setImageResource(R.drawable.un_mute_btn);
             } else {
-                soundBtn.setImageResource(R.drawable.ic_volume_off_black_24dp);
+                soundBtn.setImageResource(R.drawable.mute_btn);
             }
         }
     }
@@ -93,10 +97,10 @@ public class openingScreen extends BaseActivity {
     protected void onResume() {
         super.onResume();
         if (Utils.isMuted()) {
-            soundBtn.setImageResource(R.drawable.ic_volume_up_black_24dp);
+            soundBtn.setImageResource(R.drawable.un_mute_btn);
             Utils.pauseMusic();
         } else {
-            soundBtn.setImageResource(R.drawable.ic_volume_off_black_24dp);
+            soundBtn.setImageResource(R.drawable.mute_btn);
             Utils.unPauseMusic();
         }
     }
@@ -105,10 +109,10 @@ public class openingScreen extends BaseActivity {
     protected void onRestart() {
         super.onRestart();
         if (!Utils.isMuted()) {
-            soundBtn.setImageResource(R.drawable.ic_volume_up_black_24dp);
+            soundBtn.setImageResource(R.drawable.un_mute_btn);
             Utils.pauseMusic();
         } else {
-            soundBtn.setImageResource(R.drawable.ic_volume_off_black_24dp);
+            soundBtn.setImageResource(R.drawable.mute_btn);
             Utils.unPauseMusic();
         }
     }

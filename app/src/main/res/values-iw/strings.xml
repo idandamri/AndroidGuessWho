@@ -31,4 +31,5 @@
 
     <string name="select">בחר</string>
     <string name="my_choice">הקלף שבחרתי:</string>
+    <string name="didnt_select_card">לא בחרת עדיין שום קלף</string>
 </resources>

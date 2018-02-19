@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".openingScreen"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape">
+            android:name=".Activities.openingScreen">
+            <!--android:configChanges="orientation|keyboardHidden"-->
+            <!--android:screenOrientation="landscape"-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,20 +23,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.BaseActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape" />
+            android:name=".Activities.BaseActivity"/>
         <activity
-            android:name=".Activities.SettingsActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape" />
+            android:name=".Activities.SettingsActivity"/>
+        <!--android:configChanges="orientation|keyboardHidden"-->
+        <!--android:screenOrientation="landscape"-->
         <activity
-            android:name=".Activities.EasyGameActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape" />
+            android:name=".Activities.EasyGameActivity"/>
         <activity android:name=".Activities.CharecterSelectorScreen"
-            android:configChanges="locale"
             android:theme="@style/Theme.AppCompat.Translucent" />
+            <!--android:configChanges="locale"-->
     </application>
 
 </manifest>

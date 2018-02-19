@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#85ece5"
-    tools:context="com.guesswho.idan.androidguesswho.openingScreen">
+    android:background="@drawable/bg_2"
+    tools:context="com.guesswho.idan.androidguesswho.Activities.openingScreen">
 
     <include layout = "@layout/top_bar"/>
 
@@ -28,9 +28,10 @@
 
             <Button
                 android:id="@+id/play_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Play" />
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/play_btn"
+                />
 
             <Button
                 android:id="@+id/tutorial_btn"

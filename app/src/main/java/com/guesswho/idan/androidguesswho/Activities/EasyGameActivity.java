@@ -1,26 +1,23 @@
 package com.guesswho.idan.androidguesswho.Activities;
 
-import android.app.Dialog;
-import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.guesswho.idan.androidguesswho.CharacterCustomeView;
 import com.guesswho.idan.androidguesswho.CharacterSelectObject;
 import com.guesswho.idan.androidguesswho.CustomSpinnerAdapter;
 import com.guesswho.idan.androidguesswho.R;
-import com.guesswho.idan.androidguesswho.openingScreen.SoundListener;
+import com.guesswho.idan.androidguesswho.Activities.openingScreen.SoundListener;
+import com.guesswho.idan.androidguesswho.Utils;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -40,6 +37,9 @@ public class EasyGameActivity extends BaseActivity {
         //set content view AFTER ABOVE sequence (to avoid crash)
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         setContentView(R.layout.activity_game);
 
         initViews();
@@ -69,10 +69,10 @@ public class EasyGameActivity extends BaseActivity {
         myCard.setCharacterSelectObject(selected);
         myCard.characterIV.setImageResource(selected.getImageName());
         myCard.charNameTV.setText(selected.getName());
+        myCard.charNameTV.setPadding(0,0,0,0);
         myCard.setWeakReference(this);
-        myCard.characterNoXContainer.setPadding(10,5,10,5);
+        myCard.characterNoXContainer.setPadding(10,5,10,0);
         myCard.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_selected);
-
         myCard.setIsClickable(false);
         myCard.setIsSelected(true);
         myCard.getView().setOnClickListener(myCard.selectedClickListener);
@@ -97,6 +97,8 @@ public class EasyGameActivity extends BaseActivity {
                 card.setWeakReference(this);
                 card.setCharacterSelectObject(creationList.get(i-1));
                 card.charNameTV.setText(name);
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) card.charNameTV.getLayoutParams();
+//                params.setMargins(0, 0, 0, Utils.dpToPx(4));
                 card.characterIV.setImageResource(imageName);
                 card.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_basic);
 //                card.setOnLongClickListener(new longClickListener(name, imageName, this));
@@ -160,10 +162,10 @@ public class EasyGameActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         if (Utils.isMuted()) {
-            soundBtn.setImageResource(R.drawable.ic_volume_up_black_24dp);
+            soundBtn.setImageResource(R.drawable.mute_btn);
             Utils.pauseMusic();
         } else {
-            soundBtn.setImageResource(R.drawable.ic_volume_off_black_24dp);
+            soundBtn.setImageResource(R.drawable.un_mute_btn);
             Utils.unPauseMusic();
         }
     }

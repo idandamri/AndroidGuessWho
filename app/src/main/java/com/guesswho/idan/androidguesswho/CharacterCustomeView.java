@@ -12,7 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.guesswho.idan.androidguesswho.Activities.BaseActivity;
-import com.guesswho.idan.androidguesswho.Activities.Utils;
 
 import java.lang.ref.WeakReference;
 
@@ -99,15 +98,20 @@ public class CharacterCustomeView extends RelativeLayout {
         pressedCardDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 
         LayoutInflater inflater = weakReference.get().getLayoutInflater();
-        View newView = (View) inflater.inflate(R.layout.profile_img_popup, null);
+        View newView = inflater.inflate(R.layout.profile_img_popup, null);
         CharacterCustomeView characterCustomeView = newView.findViewById(R.id.my_selected_dialog_card);
         TextView characterCustomeViewTitle = newView.findViewById(R.id.my_choice_card);
-        characterCustomeViewTitle.setText(R.string.my_choice);
+        if (isSelected) {
+            characterCustomeViewTitle.setVisibility(VISIBLE);
+            characterCustomeViewTitle.setText(R.string.my_choice);
+        }else{
+            characterCustomeView.setBackgroundResource(R.drawable.card_bg_basic);
+            characterCustomeViewTitle.setVisibility(GONE);
+        }
         characterCustomeView.setIVResource(selected.getImageName());
         characterCustomeView.setIsClickable(false);
         characterCustomeView.setCharecterName(selected.getName());
         pressedCardDialog.setContentView(newView);
-
         characterCustomeView.setSoundEffectsEnabled(false);
         pressedCardDialog.show();
     }
