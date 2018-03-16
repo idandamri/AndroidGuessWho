@@ -19,6 +19,7 @@
         android:layout_alignBottom="@id/top_bar_game"
         android:gravity="center"
         android:paddingBottom="6dp"
+        android:fontFamily="@font/lemonada_light"
         android:paddingEnd="40dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"

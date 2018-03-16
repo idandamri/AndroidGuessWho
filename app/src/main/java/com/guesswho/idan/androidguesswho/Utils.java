@@ -3,7 +3,9 @@ package com.guesswho.idan.androidguesswho;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.Display;
 import android.view.Surface;
 import android.view.WindowManager;
@@ -193,6 +195,10 @@ public class Utils {
         id++;
         charObj = new CharacterSelectObject(id,MapChar,getContext().getString(R.string.zebra),R.drawable.zebra);
         DataSet.add(charObj);
+    }
+
+    public static Typeface getAppTypeFace(){
+        return ResourcesCompat.getFont(getContext(),R.font.lemonada_light);
     }
 
     public static ArrayList<CharacterSelectObject> getDataSet() {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/cardo</item>
+        <item>@font/days_one</item>
+        <item>@font/kavoon</item>
+        <item>@font/lemonada_light</item>
+        <item>@font/ultra</item>
+    </array>
+</resources>

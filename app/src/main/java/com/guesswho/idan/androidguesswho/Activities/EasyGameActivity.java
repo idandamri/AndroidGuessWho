@@ -50,8 +50,6 @@ public class EasyGameActivity extends BaseActivity {
         settingsBtn = findViewById(R.id.settings_btn);
         soundBtn.setOnClickListener(new SoundListener(this.soundBtn));
 
-//        settingsBtn.setOnClickListener(settingaListener);
-
         Spinner spinner = findViewById(R.id.quest_spinner);
         // Spinner Drop down elements
         createSpinnerElements();
@@ -98,10 +96,8 @@ public class EasyGameActivity extends BaseActivity {
                 card.setCharacterSelectObject(creationList.get(i-1));
                 card.charNameTV.setText(name);
                 LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) card.charNameTV.getLayoutParams();
-//                params.setMargins(0, 0, 0, Utils.dpToPx(4));
                 card.characterIV.setImageResource(imageName);
                 card.characterNoXContainer.setBackgroundResource(R.drawable.card_bg_basic);
-//                card.setOnLongClickListener(new longClickListener(name, imageName, this));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -134,29 +130,6 @@ public class EasyGameActivity extends BaseActivity {
 
         }
     };
-
-
-//    public static class longClickListener implements View.OnLongClickListener{
-//
-//        String name = "";
-//        int resourceImageID = -1;
-//        WeakReference<BaseActivity> activityCompatWeakReference;
-//
-//        public longClickListener(String name, int resourceImageID, BaseActivity activityCompat) {
-//            this.name = name;
-//            this.resourceImageID = resourceImageID;
-//            activityCompatWeakReference = new WeakReference<>(activityCompat);
-//        }
-//
-//        @Override
-//        public boolean onLongClick(View v) {
-//            EasyGameActivity a = ((EasyGameActivity) activityCompatWeakReference.get());
-//            a.openPressenCardDialog(Utils.getContext(),a.selected);
-//
-//            Toast.makeText(Utils.getContext(), "LLLLOOOOONNNGGGG", Toast.LENGTH_SHORT).show();
-//            return true;
-//        }
-//    }
 
     @Override
     protected void onResume() {

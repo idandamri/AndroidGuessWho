@@ -32,7 +32,11 @@
             android:name=".Activities.EasyGameActivity"/>
         <activity android:name=".Activities.CharecterSelectorScreen"
             android:theme="@style/Theme.AppCompat.Translucent" />
-            <!--android:configChanges="locale"-->
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <!--android:configChanges="locale"-->
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@
         android:id="@+id/my_choice_card"
         android:textColor="@color/textColor"
         android:layout_margin="5dp"
+        android:fontFamily="@font/lemonada_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

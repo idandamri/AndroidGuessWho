@@ -1,5 +1,7 @@
 package com.guesswho.idan.androidguesswho;
 
+import android.graphics.Typeface;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,6 +74,7 @@ public class CharSelectorAdapter extends RecyclerView.Adapter<CharSelectorAdapte
             container = itemView.findViewById(R.id.character_container);
             container.setOnClickListener(this);
             weakReferenceSelectorScreen = new WeakReference<>(charecterSelectorScreen);
+            charNameTV.setTypeface(Utils.getAppTypeFace());
         }
 
         @Override

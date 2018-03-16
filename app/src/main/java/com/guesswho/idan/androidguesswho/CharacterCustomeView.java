@@ -92,7 +92,7 @@ public class CharacterCustomeView extends RelativeLayout {
         }
     }
 
-    public void openPressenCardDialog(Context context, CharacterSelectObject selected) {
+    public void openPresentCardDialog(Context context, CharacterSelectObject selected) {
         Dialog pressedCardDialog = new Dialog(weakReference.get());
 
         pressedCardDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -203,14 +203,14 @@ public class CharacterCustomeView extends RelativeLayout {
     public OnClickListener selectedClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            openPressenCardDialog(Utils.getContext(),getCharacterSelectObject());
+            openPresentCardDialog(Utils.getContext(),getCharacterSelectObject());
         }
     };
 
     private OnLongClickListener longPressClickListener = new OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
-            openPressenCardDialog(Utils.getContext(),getCharacterSelectObject());
+            openPresentCardDialog(Utils.getContext(),getCharacterSelectObject());
             return true;
         }
     };

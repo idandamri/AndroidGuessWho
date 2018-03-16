@@ -27,10 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="#ffffff"
+            android:background="@drawable/selected_stroke_bg"
+            android:fontFamily="@font/lemonada_light"
             android:gravity="center"
             android:padding="10dp"
             android:text="SELECT"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </RelativeLayout>

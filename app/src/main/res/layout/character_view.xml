@@ -23,12 +23,12 @@
         <TextView
             android:id="@+id/character_name"
             android:layout_width="match_parent"
+            android:fontFamily="@font/lemonada_light"
             android:layout_height="0dp"
             android:layout_alignBottom="@+id/character_item_iv"
             android:layout_weight="3"
             android:gravity="center"
             android:layout_marginBottom="5dp"
-            android:text="IdanNoam"
             android:textColor="#000000"
             android:textSize="13dp" />
     </LinearLayout>
