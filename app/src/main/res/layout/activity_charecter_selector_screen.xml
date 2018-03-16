@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="50dp"
-    android:layout_marginBottom="50dp"
     android:layout_gravity="center"
     tools:context="com.guesswho.idan.androidguesswho.Activities.CharecterSelectorScreen">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/char_selector_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:paddingTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="380dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/char_selector_recycler_view">
+        android:layout_below="@+id/char_selector_recycler_view">
 
         <TextView
             android:id="@+id/select_card_tv"
@@ -31,4 +33,4 @@
             android:text="SELECT"
             android:textColor="#000000" />
     </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
